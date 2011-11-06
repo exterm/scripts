@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-def hzToGHz i
+def hz_to_ghz i
   (i / 10000.0).round / 100.0
 end
 
@@ -8,7 +8,7 @@ infos = (0..3).to_a.map do |cpu|
   freq = %x[ cpufreq-info -c #{cpu} -f ]
   minFreq, maxFreq, gov = %x[ cpufreq-info -c #{cpu} -p ].split(" ")
   freqG, minFreqG, maxFreqG = [freq, minFreq, maxFreq].map do |f|
-    hzToGHz f.to_i
+    hz_to_ghz f.to_i
   end
   [freqG, gov, minFreqG, maxFreqG]
 end
