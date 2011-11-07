@@ -1,5 +1,8 @@
 #!/usr/bin/env ruby
 
+# Display current cpu frequencies as well as governors and frequency range
+# in a simple readable format
+
 def hz_to_ghz i
   (i / 10000.0).round / 100.0
 end
