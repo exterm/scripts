@@ -1,0 +1,1 @@
+ls -1 *.htm | while read line; do mv $line $(echo $line | sed 's/.htm$//g'); done

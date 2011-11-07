@@ -1,0 +1,1 @@
+while [ `BEFEHL ... ; echo $?` -ne 0 ]; do sleep 1; done

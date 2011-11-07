@@ -1,0 +1,4 @@
+for i in `seq 1 107`
+do wget http://image.issuu.com/090116010847-f64ad151793f4ddeab23f7c069671ab1/jpg/page_$i.jpg
+done
+
