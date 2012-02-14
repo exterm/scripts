@@ -1,1 +1,3 @@
-while [ `BEFEHL ... ; echo $?` -ne 0 ]; do sleep 1; done
+while [ `COMMAND ; echo $?` -ne 0 ]; do sleep 1; done
+# or
+while ! COMMAND ; do sleep 1; done
