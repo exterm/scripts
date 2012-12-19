@@ -4,7 +4,6 @@ THERE="/tmp/elsewhere/${HERE_ID}/$(basename $HERE)"
 THERE_DIR=$(dirname "${THERE}")
 
 echo "copying ${HERE} to ${THERE_DIR}"
-mkdir -p ${THERE}
 rsync -rLt --delete --force ${HERE} ${THERE_DIR}
 
 
