@@ -1,5 +1,6 @@
 HERE=$(pwd)
-THERE="/tmp/elsewhere${HERE}"
+HERE_ID=$(echo $HERE | md5sum | cut -d ' ' -f1)
+THERE="/tmp/elsewhere/${HERE_ID}/$(basename $HERE)"
 THERE_DIR=$(dirname "${THERE}")
 
 echo "copying ${HERE} to ${THERE_DIR}"
