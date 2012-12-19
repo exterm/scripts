@@ -1,0 +1,10 @@
+HERE=$(pwd)
+THERE="/tmp/elsewhere${HERE}"
+
+mkdir -p ${THERE}
+rsync -rLt --del --force ${HERE}/* ${THERE}
+cd ${THERE}
+
+echo "executing \"$*\" in $(pwd)"
+echo --
+bash -ic "$*"
