@@ -1,10 +1,13 @@
 HERE=$(pwd)
 THERE="/tmp/elsewhere${HERE}"
+THERE_DIR=$(dirname "${THERE}")
 
+echo "copying ${HERE} to ${THERE_DIR}"
 mkdir -p ${THERE}
-rsync -rLt --del --force ${HERE}/* ${THERE}
-cd ${THERE}
+rsync -rLt --delete --force ${HERE} ${THERE_DIR}
 
-echo "executing \"$*\" in $(pwd)"
+
+echo "executing \"$*\" in ${THERE}"
+cd ${THERE}
 echo --
 bash -ic "$*"
