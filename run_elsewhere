@@ -4,15 +4,15 @@
 
 HERE=$(pwd)
 HERE_ID=$(echo $HERE | md5sum | cut -d ' ' -f1)
-THERE="/tmp/elsewhere/${HERE_ID}/$(basename $HERE)"
-THERE_DIR=$(dirname "${THERE}")
+THERE="/tmp/elsewhere/$HERE_ID/$(basename $HERE)"
+THERE_DIR=$(dirname "$THERE")
 
-echo "copying ${HERE} to ${THERE_DIR}"
+echo "copying $HERE to $THERE_DIR"
 mkdir -p ${THERE_DIR}
-rsync -rLt --delete --force ${HERE} ${THERE_DIR}
+rsync -rLt --delete --force "$HERE" "$THERE_DIR"
 
 
-echo "executing \"$*\" in ${THERE}"
+echo "executing \"$*\" in $THERE"
 cd ${THERE}
 echo --
 bash -ic "$*"
