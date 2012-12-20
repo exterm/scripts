@@ -1,3 +1,7 @@
+#!/usr/bin/env bash
+
+# run a command in a copy of the current directory
+
 HERE=$(pwd)
 HERE_ID=$(echo $HERE | md5sum | cut -d ' ' -f1)
 THERE="/tmp/elsewhere/${HERE_ID}/$(basename $HERE)"
